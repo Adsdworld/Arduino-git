@@ -1,15 +1,5 @@
 /*Commentaire:
-L'objectif est de d'allumer 4 leds selon la position du joystick, je ségmante en 4 zones mon joystick, zone 1 en haut à gauche, zone 2 en haut à droite, zone 3 en bas à droite, zone 4 en bas à gauche. 
-Une fois que j'ai ces zones je sais que je dois allumer une des 2 leds de la zone. Pour déterminer laquelle, je fais un produit scalaire pour obtenir l'"angle", j'obtiens une valeur qui pass par 1 - 0 - 1, ça couvre une distance de 180°.
-
-Tout d'abord je regarde si mon joystick est vers le bas ou vers le haut
-je calcule l'angle
-si l'angle est <0.5 on est dans la zone basse
-si l'angle est >0.5 on est soit à droite soit à gauche (je rappel que la valeur de l'angle qui m'est retournée est comprise entre 1 (0.5) 0 (0.5) 1  de 1 à 1 je couvre 180°)
-Pour savoir si j'allume la led droite ou gauche, je regarde les coordonnées en les comparant au centre
-
-ça me fais un jolie script qui change l'allumage des leds dé que l'on arrive à un angle de 45°, c'est beaucoup mieux qu'un joystick qui allume les leds qu'en tenant compte des 4 zones
-*/
+Un code plus léger à executer*/
 
 
 //déclaration des define
