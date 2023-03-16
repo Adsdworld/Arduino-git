@@ -26,8 +26,8 @@ int X_centre=528;
 int Y_centre=518;
 int bas=6;
 int haut=7;
-int droite=8;
-int gauche=5;
+int droite=5;
+int gauche=8;
 int xValue = analogRead(joyX);
 int yValue = analogRead(joyY);
 float angle=0;
@@ -100,7 +100,7 @@ if (xValue>=(X_centre-1) && xValue<=(X_centre+1) && yValue>=(Y_centre-1) && yVal
       digitalWrite(droite, LOW);
       digitalWrite(gauche, LOW);}else{
 
-      if (yValue<(Y_centre-1)){           //joystick vers la droite
+      if (Vy<=0){           //joystick vers la droite
         if (angle>=0.5){
             digitalWrite(droite, HIGH);
             digitalWrite(bas, LOW); 
@@ -119,7 +119,7 @@ if (xValue>=(X_centre-1) && xValue<=(X_centre+1) && yValue>=(Y_centre-1) && yVal
     }
 
   else{
-    if (xValue<525){        //joystick vers le haut
+    if (xValue<(X_centre-1)){        //joystick vers le haut
 
       Ux=xValue-X_centre;
       Uy=yValue-Y_centre;
@@ -146,7 +146,7 @@ if (xValue>=(X_centre-1) && xValue<=(X_centre+1) && yValue>=(Y_centre-1) && yVal
       digitalWrite(droite, LOW);
       digitalWrite(gauche, LOW);}else{
 
-      if (yValue>(Y_centre+1)){             //joystick vers la droite
+      if (Vy<=0){             //joystick vers la droite
         if (angle>=0.5){
             digitalWrite(droite, HIGH);
             digitalWrite(bas, LOW); 
