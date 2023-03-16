@@ -1,8 +1,7 @@
 /*commentaire :
 Le programme me semble bon mais peut être incomplet, seulement j'ai l'impression que quand il detecte que la pin 9 reçoit un tout petit peu de courant il la passe à 1 
 J'ai remarqué que pour recevoir du courant, passer pas le 3,3v ou le 5v ça ne marche pas en revanche mettre en contact la 9 et la 5 ça marche.
-Le bouton que l'on as, je ne saurais dire comment ils fonctionnent, le couant passe tout le temps quoiqu'il arrive
-*/
+Le bouton que l'on as, je ne saurais dire comment ils fonctionnent, le couant passe tout le temps quoiqu'il arrive*/
 
 
 //déclaration des defines

@@ -1,6 +1,5 @@
 /*Commentaire : 
-faire clignoter des leds et utiliser un PWN (ici pin 9) pour faire varié l'intensité d'une led
-*/
+faire clignoter des leds et utiliser un PWN (ici pin 9) pour faire varié l'intensité d'une led*/
 
 
 //déclaration des librairies

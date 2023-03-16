@@ -1,6 +1,5 @@
 /*Commentaire
-Faire clignoter 3 leds à intervals régulier
-*/
+Faire clignoter 3 leds à intervals régulier*/
 
 
 //déclaration des define
