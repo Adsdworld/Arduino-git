@@ -2,7 +2,9 @@
 branchement : 
 envoyer du 3,3v ou 5v
 mettre la résistance 10k Ohm
-
+mettre la gpio qui va lire la valeur (on peut placer la résistance, l'alimentation et la gpio sur la même lignt)
+placer le bouton au milieu de la plaque, la résistance doit arriver sur un coté du bouton
+Sur l'autre coté du bouton, placer la masse relier au gnd
 */
 
 
