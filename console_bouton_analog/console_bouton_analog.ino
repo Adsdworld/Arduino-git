@@ -15,22 +15,22 @@ Sur l'autre coté du bouton, placer la masse relier au gnd
 
 
 //déclaration des variables
-float analoge_input=A5;       //on se sert de la 9 pour savoir si le courant passe où non
+float analoge_input=A5;                    //on se sert de la 9 pour savoir si le courant passe où non
 
 
 //déclaration des fonctions
 
 
 void setup() {
-  pinMode(analoge_input, INPUT);    //entrée numérique
-  Serial.begin(1200);            //ceci dit à l'arduino d'intéragir avec la console à une vitesse de 9600 bauds, on peut ouvrir la console avec la loupe en haut à droite sur arduino, la console apparaitra vide si vôtre arduino n'y à rien écris, plus loin on va écrire des choses sur la console
+  pinMode(analoge_input, INPUT);           //entrée numérique
+  Serial.begin(1200);                      //ceci dit à l'arduino d'intéragir avec la console à une vitesse de 9600 bauds, on peut ouvrir la console avec la loupe en haut à droite sur arduino, la console apparaitra vide si vôtre arduino n'y à rien écris, plus loin on va écrire des choses sur la console
 }
 
 
 void loop() {
 
-  Serial.print("etat du bouton");        //arduino affiche sur la console "etat du bouton"
-  Serial.print("\t");                    //permet de mettre une tabulation (rajoute un gros espace)
+  Serial.print("etat du bouton");          //arduino affiche sur la console "etat du bouton"
+  Serial.print("\t");                      //permet de mettre une tabulation (rajoute un gros espace)
 
 
   Serial.print(analogRead(analoge_input)); //on rajoute la valeur lue sur la gpio 9 : 0 ou 1
@@ -48,6 +48,6 @@ void loop() {
       delay(10);
     }
   }
-  Serial.print("\n");                     //permet de faire un retour à la ligne
+  Serial.print("\n");                      //permet de faire un retour à la ligne
 
 }
