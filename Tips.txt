@@ -2,6 +2,7 @@ Liens :
 logiciel arduino : https://www.arduino.cc/en/software 
 liens de téléchargement direct windows 64bits : https://downloads.arduino.cc/arduino-ide/arduino-ide_2.0.4_Windows_64bit.exe 
 Documentation : https://www.arduino.cc/reference/en/ 
+Drivers à installer si le bouton port reste grisé : https://sparks.gogo.co.nz/ch340.html (brancher l'arduino pendant l'installation), si vous obtenez un "failed to install", cliquer sur unistall attendez le success, puis ré-essayer une installation qui devrait fonctionner. Relancer votre Arduino
 
 
 Led : 
