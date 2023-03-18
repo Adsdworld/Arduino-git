@@ -57,7 +57,7 @@ xValue = analogRead(joyX);
 yValue = analogRead(joyY);
 
 
-if (xValue>=(X_centre-1) && xValue<=(X_centre+1) && yValue>=(Y_centre-1) && yValue<=(Y_centre+1)){     //jostick au "0"  xValue==526 && yValue==518
+if (xValue>=(X_centre-1) && xValue<=(X_centre+1) && yValue>=(Y_centre-1) && yValue<=(Y_centre+1)){     //jostick au "0"
 
   digitalWrite(bas, LOW);   //extenction des leds
   digitalWrite(haut, LOW);
