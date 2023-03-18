@@ -2,9 +2,11 @@
 branchement : 
 envoyer du 3,3v ou 5v
 mettre la résistance 10k Ohm
-mettre la gpio qui va lire la valeur (on peut placer la résistance, l'alimentation et la analoge sur la même lignt)
+mettre la gpio qui va lire la valeur (on peut placer la résistance, l'alimentation et la analoge sur la même ligne)
 placer le bouton au milieu de la plaque, la résistance doit arriver sur un coté du bouton
 Sur l'autre coté du bouton, placer la masse relier au gnd
+
+Le montage reste à travailler : résultat pas concluant on j'obtiens pas 0
 */
 
 
@@ -37,13 +39,13 @@ void loop() {
   Serial.print("\t");
 
 
-  if (analogRead(analoge_input)==1){       //j'ai rajouté ça pour que l'on update la console que quand la valeur change, ça sert à rien d'afficher 1000 x "etat du bouton 1", autant afficher 1 fois le message et remettre un nouveau message quand la valeur aura changée
+  if (analogRead(analoge_input)==1023){       //j'ai rajouté ça pour que l'on update la console que quand la valeur change, ça sert à rien d'afficher 1000 x "etat du bouton 1", autant afficher 1 fois le message et remettre un nouveau message quand la valeur aura changée
     Serial.print("le courant passe");
-    while (analogRead(analoge_input)==1){
+    while (analogRead(analoge_input)==1023){
       delay(10);
     }
   }else{
-    Serial.print("le courant ne passe pas");
+    Serial.print("le courant ne passe pas où est supérieur à 0");
     while (analogRead(analoge_input)==0){
       delay(10);
     }
