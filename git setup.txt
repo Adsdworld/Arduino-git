@@ -1,9 +1,0 @@
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-
-https://git-scm.com/download/win
-
-eval "$(ssh-agent -s)"
-
-Get-Service ssh-agent
-
-Get-Service ssh-agent | Select StartType
