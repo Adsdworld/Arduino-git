@@ -18,6 +18,8 @@ int Pin_VerteP = 9;
 
 float time=0.00;     //sert à récupérer le millis() à un moment donné
 float temps=0.00;    //temps d'attente lu sur le potentiomètre
+float test=0.00;
+
 int Pin_Potentiometre = A0;
 int Pin_bouton = 10;
 
@@ -34,10 +36,13 @@ bool f_led_managment (char Led_RougeV, char Led_OrangeV, char Led_VerteV, char L
 
 void temps_attente (){
   time=millis();
-  while ((time+f_potentiometre)>millis());}
+  test= float(time)+float(5000.00+5*analogRead(Pin_Potentiometre));
+  while (test>millis()){
+    //ne rien faire
+  }}
 
 float f_potentiometre (){
-  temps=5000+5*analogRead(Pin_Potentiometre);
+  temps=5000.00+5*analogRead(Pin_Potentiometre);
   return temps;}
 
 
@@ -61,9 +66,10 @@ void loop()
   f_led_managment(LOW, LOW, HIGH, HIGH, LOW);
 
   time=millis();
-  while ((time+f_potentiometre)>millis());
+  test= float(time)+float(5000.00+5*analogRead(Pin_Potentiometre));
+  while (test>millis()){
     if (0==digitalRead(Pin_bouton)){
-      break;}
+      break;}}
 
   f_led_managment(LOW, HIGH, LOW, HIGH, LOW);
   temps_attente();
