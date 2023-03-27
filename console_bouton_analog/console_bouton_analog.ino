@@ -1,12 +1,8 @@
 /*commentaire :
 branchement : 
-envoyer du 3,3v ou 5v
-mettre la résistance 10k Ohm
-mettre la gpio qui va lire la valeur (on peut placer la résistance, l'alimentation et la analoge sur la même ligne)
-placer le bouton au milieu de la plaque, la résistance doit arriver sur un coté du bouton
-Sur l'autre coté du bouton, placer la masse relier au gnd
-
-Le montage reste à travailler : résultat pas concluant on j'obtiens pas 0
+envoyer 5v sur la première patte du potentiomètre
+mettre la masse sur l'autre patte
+mettre la gpio qui va lire la valeur sur la patte isolée
 */
 
 
@@ -17,7 +13,8 @@ Le montage reste à travailler : résultat pas concluant on j'obtiens pas 0
 
 
 //déclaration des variables
-float analoge_input=A5;                    //on se sert de la 9 pour savoir si le courant passe où non
+int analoge_input=A0;                    //on se sert de la A0 pour savoir si le courant passe où non
+int Prev_AnalogRead = 0;                 
 
 
 //déclaration des fonctions
@@ -25,31 +22,23 @@ float analoge_input=A5;                    //on se sert de la 9 pour savoir si l
 
 void setup() {
   pinMode(analoge_input, INPUT);           //entrée numérique
-  Serial.begin(1200);                      //ceci dit à l'arduino d'intéragir avec la console à une vitesse de 9600 bauds, on peut ouvrir la console avec la loupe en haut à droite sur arduino, la console apparaitra vide si vôtre arduino n'y à rien écris, plus loin on va écrire des choses sur la console
+  Serial.begin(9600);                      //ceci dit à l'arduino d'intéragir avec la console à une vitesse de 9600 bauds, on peut ouvrir la console avec la loupe en haut à droite sur arduino, la console apparaitra vide si vôtre arduino n'y à rien écris, plus loin on va écrire des choses sur la console
 }
 
 
 void loop() {
 
-  Serial.print("etat du bouton");          //arduino affiche sur la console "etat du bouton"
+  Serial.print("Valeur entre 0 et 1023 du courant 5V qui passe");          //arduino affiche sur la console "etat du bouton"
   Serial.print("\t");                      //permet de mettre une tabulation (rajoute un gros espace)
-
 
   Serial.print(analogRead(analoge_input)); //on rajoute la valeur lue sur la gpio 9 : 0 ou 1
   Serial.print("\t");
 
-
-  if (analogRead(analoge_input)==1023){       //j'ai rajouté ça pour que l'on update la console que quand la valeur change, ça sert à rien d'afficher 1000 x "etat du bouton 1", autant afficher 1 fois le message et remettre un nouveau message quand la valeur aura changée
-    Serial.print("le courant passe");
-    while (analogRead(analoge_input)==1023){
-      delay(10);
+  Prev_AnalogRead = analogRead(analoge_input);
+  delay(10);
+  while (analogRead(analoge_input)==Prev_AnalogRead){    //tant que la valeur reste la même, on ne fait rien, ça permet d'éviter de polluer la console
+    delay(10);
     }
-  }else{
-    Serial.print("le courant ne passe pas où est supérieur à 0");
-    while (analogRead(analoge_input)==0){
-      delay(10);
-    }
-  }
   Serial.print("\n");                      //permet de faire un retour à la ligne
 
 }
