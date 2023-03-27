@@ -16,7 +16,7 @@ int Pin_VerteP = 7;
 int Pin_RougeP = 8;
 
 float time=0;
-int Pin_Potentiometre = 9;
+int Pin_Potentiometre = A0;
 int Pin_bouton = 10;
 
 
