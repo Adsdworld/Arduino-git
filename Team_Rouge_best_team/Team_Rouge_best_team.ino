@@ -10,13 +10,14 @@
 
 
 //déclaration des variables
-Pin_RougeV = 5
-Pin_OrangeV = 6
-Pin_VerteP = 7
-Pin_RougeP = 8
+int Pin_RougeV = 5;
+int Pin_OrangeV = 6;
+int Pin_VerteP = 7;
+int Pin_RougeP = 8;
 
-time=0
-pin_11
+float time=0;
+int Pin_Potentiometre = 9;
+int Pin_bouton = 10;
 
 
 //déclaration des fonctions
@@ -28,18 +29,18 @@ f_led_managment (Led_RougeV, Led_OrangeV, Led_VerteV, Led_RougeP, Led_VerteP)
   digitalWrite(Pin_VerteP, Led_VerteP);
 
 temps_attente ()
-  time=millis()
-  while ((time+f_potentiomètre)>millis())
+  time=millis();
+  while ((time+f_potentiomètre)>millis());
 
 f_potentiomètre ()
-  temps=10*analogRead(pin_11)
+  temps=10*analogRead(Pin_Potentiometre);
   return temps;
 
 f_temps_attente_plus_bouton ()
-  time=millis()
+  time=millis();
   while ((time+f_potentiomètre)>millis())
-    if (1==digitalRead(pin_12))
-      break
+    if (1==digitalRead(Pin_bouton))
+      break;
 
 void setup() 
 {
