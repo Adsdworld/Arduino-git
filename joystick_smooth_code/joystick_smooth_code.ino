@@ -13,10 +13,10 @@ Un code plus léger à executer*/
 //déclaration des variables
 int X_centre=528;
 int Y_centre=518;
-int bas=8;
+int bas=6;
 int haut=7;
 int droite=5;
-int gauche=6;
+int gauche=8;
 int xValue = analogRead(joyX);
 int yValue = analogRead(joyY);
 float angle=0;

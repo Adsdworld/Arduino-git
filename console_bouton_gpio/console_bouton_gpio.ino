@@ -5,6 +5,12 @@ mettre la résistance 10k Ohm
 mettre la gpio qui va lire la valeur (on peut placer la résistance, l'alimentation et la gpio sur la même ligne)
 placer le bouton au milieu de la plaque, la résistance doit arriver sur un coté du bouton
 Sur l'autre coté du bouton, placer la masse relier au gnd
+
+
+                                                           ------ (on envoie du 5V ici)
+                                                             XX
+(on récupère notre courant ici quand le bouton sera pressé)------
+Schéma d'un bouton, les pattes en faces sont reliés entre elles, si vous reliez 2 pattes reliées entre elles, le courant passera forcément, il faut donc définir la patte qui reçoit le courant puis prendre l'autre patte pour récupérer le courant quand le bouton est pressé
 */
 
 
