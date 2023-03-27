@@ -10,23 +10,22 @@
 
 
 //déclaration des variables
-pin_1 = 5
-pin_2 = 6
-pin_3 = 7
-pin_4 = 8
-pin_5 = 9
-pin_6 = 10
+Pin_RougeV = 5
+Pin_OrangeV = 6
+Pin_VerteP = 7
+Pin_RougeP = 8
+
 time=0
 pin_11
 
 
 //déclaration des fonctions
 f_led_managment (Led_RougeV, Led_OrangeV, Led_VerteV, Led_RougeP, Led_VerteP)
-  digitalWrite(pin1, Led_RougeV);
-  digitalWrite(pin2, Led_OrangeV);
-  digitalWrite(pin3, Led_VerteV);
-  digitalWrite(pin4, Led_RougeP);
-  digitalWrite(pin5, Led_VerteP);
+  digitalWrite(Pin_RougeV, Led_RougeV);
+  digitalWrite(Pin_OrangeV, Led_OrangeV);
+  digitalWrite(Pin_VerteV, Led_VerteV);
+  digitalWrite(Pin_RougeP, Led_RougeP);
+  digitalWrite(Pin_VerteP, Led_VerteP);
 
 temps_attente ()
   time=millis()
