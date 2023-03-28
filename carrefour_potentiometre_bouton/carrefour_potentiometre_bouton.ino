@@ -14,7 +14,8 @@ int Pin_VerteV = 7;
 int Pin_RougeP = 8;
 int Pin_VerteP = 9;
 int Pin_Potentiometre = A0;
-int Pin_bouton = 10;
+int Pin_Bouton = 10;
+
 
 float time=0.00;                                                                                                //sert à récupérer le millis() à un moment donné
 float temps=0.00;                                                                                               //temps d'attente lu sur le potentiomètre                                                                                                    
@@ -46,7 +47,7 @@ void setup() {
   pinMode(Pin_VerteP, OUTPUT);
 
   pinMode(Pin_Potentiometre, INPUT);
-  pinMode(Pin_bouton, INPUT);}
+  pinMode(Pin_Bouton, INPUT);}
 
 
 void loop() 
@@ -60,7 +61,7 @@ void loop()
   time=millis();                                                                                                //avant ici, j'avais définit une fonction pour tout ce bout de code mais je ne l'appel qu'une seule fois, donc j'ais supprimé ma fonction et déplacé le bout de code ici, car ça fait plus de ligne en définissant une fonction.
   test= float(time)+float(5000.00+5*analogRead(Pin_Potentiometre));
   while (test>millis()){
-    if (0==digitalRead(Pin_bouton)){
+    if (0==digitalRead(Pin_Bouton)){
       break;}}
 
   f_led_managment(LOW, HIGH, LOW, HIGH, LOW);
