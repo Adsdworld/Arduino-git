@@ -18,8 +18,7 @@ int Pin_Bouton = 10;
 int Pin_Fade = 11;
 
 
-float time=0.00;                                                                                                //sert à récupérer le millis() à un moment donné
-float temps=0.00;                                                                                               //temps d'attente lu sur le potentiomètre                                                                                                    
+float time=0.00;                                                                                                //sert à récupérer le millis() à un moment donné                                                                                               //temps d'attente lu sur le potentiomètre                                                                                                    
 
 
 //déclaration des fonctions
@@ -37,9 +36,6 @@ void temps_attente (){                                                          
     //ne rien faire
     }}
 
-float f_potentiometre (){
-  temps=5000.00+5*analogRead(Pin_Potentiometre);
-  return temps;}
 
 
 void setup() { 
@@ -72,6 +68,9 @@ void loop()
   temps_attente();
 
   f_led_managment(HIGH, LOW, LOW, LOW, HIGH, 0);
+
+
+
 
 
 }
