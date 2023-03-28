@@ -67,7 +67,7 @@ void loop()
   f_led_managment(LOW, HIGH, LOW, HIGH, LOW, 100);
   temps_attente();
 
-  f_led_managment(HIGH, LOW, LOW, LOW, HIGH, 0);
+  f_led_managment(HIGH, LOW, LOW, LOW, HIGH, 255);
 
 
 
