@@ -1,13 +1,15 @@
 /*Commentaire:
-Un code plus léger à executer*/
+Description : Permet d'allumer 4 leds en fonction de la position d'un joystick bas de gamme
+Etat : Fonctionnel
+Schéma : Disponible, le cablage du joystick n'est pas fait.
+
+Un code plus léger à executer
+*/
 
 
 //déclaration des define
 #define joyX A0     
 #define joyY A1
-
-
-//déclaration des librairies
 
 
 //déclaration des variables
@@ -27,9 +29,6 @@ float Ud=0;
 float Vd=0;
 
 
-//déclaration des fonctions
-
-
 void setup() 
 {
 pinMode(bas,OUTPUT);
@@ -45,19 +44,19 @@ xValue = analogRead(joyX);
 yValue = analogRead(joyY);
 
 
-if (xValue>=(X_centre-1) && xValue<=(X_centre+1) && yValue>=(Y_centre-1) && yValue<=(Y_centre+1)){     //jostick au "0"  xValue==526 && yValue==518
+if (xValue>=(X_centre-1) && xValue<=(X_centre+1) && yValue>=(Y_centre-1) && yValue<=(Y_centre+1)){ 
 
-  digitalWrite(bas, LOW);   //extenction des leds
+  digitalWrite(bas, LOW);  
   digitalWrite(haut, LOW);
   digitalWrite(droite, LOW);
   digitalWrite(gauche, LOW);
 
 }else{
-  if (xValue>(X_centre+1)){       //joystick vers le bas
+  if (xValue>(X_centre+1)){     
 
     digitalWrite(haut, LOW);
 
-    Ux=xValue-X_centre;           //on fait le calcul de l'angle avec le produit scalaire
+    Ux=xValue-X_centre;        
     Uy=yValue-Y_centre;
     Vy=yValue-Y_centre;
     Ud=sq(Ux)+sq(Uy);
@@ -66,21 +65,21 @@ if (xValue>=(X_centre-1) && xValue<=(X_centre+1) && yValue>=(Y_centre-1) && yVal
     Vd=sqrt(Vd);
     angle=(((Ux*0)+(Uy*Vy))/(Vd*Ud));
 
-    if (angle<0.5){                       //joystick dans la zone basse
+    if (angle<0.5){                 
       digitalWrite(bas, HIGH);
       digitalWrite(droite, LOW);
       digitalWrite(gauche, LOW);}else{
 
-      if (Vy<=0){           //joystick vers la droite
+      if (Vy<=0){         
         if (angle>=0.5){
             digitalWrite(droite, HIGH);
             digitalWrite(bas, LOW); 
             digitalWrite(gauche, LOW);
           }  
-      }else{                              //joystick vers la gauche
+      }else{                         
         if (angle>=0.5){
             digitalWrite(gauche, HIGH);
-            digitalWrite(bas, LOW);       //extenction des leds
+            digitalWrite(bas, LOW);      
             digitalWrite(droite, LOW);
           }
         }
@@ -88,7 +87,7 @@ if (xValue>=(X_centre-1) && xValue<=(X_centre+1) && yValue>=(Y_centre-1) && yVal
     }
 
   else{
-    if (xValue<(X_centre-1)){        //joystick vers le haut
+    if (xValue<(X_centre-1)){     
 
       digitalWrite(bas, LOW);
 
@@ -101,20 +100,20 @@ if (xValue>=(X_centre-1) && xValue<=(X_centre+1) && yValue>=(Y_centre-1) && yVal
       Vd=sqrt(Vd);
       angle=(((Ux*0)+(Uy*Vy))/(Vd*Ud));
 
-      if (angle<0.5){                       //joystick dans la zone haute
+      if (angle<0.5){                   
       digitalWrite(haut, HIGH);
       digitalWrite(droite, LOW);
       digitalWrite(gauche, LOW);}else{
 
-      if (Vy<=0){             //joystick vers la droite
+      if (Vy<=0){          
         if (angle>=0.5){
             digitalWrite(droite, HIGH);
             digitalWrite(haut, LOW);
             digitalWrite(gauche, LOW);
           }  
-      }else{                                //joystick vers la gauche
+      }else{                            
         if (angle>=0.5){
-            digitalWrite(gauche, HIGH);        //extenction des leds
+            digitalWrite(gauche, HIGH);       
             digitalWrite(haut, LOW);
             digitalWrite(droite, LOW);
           }

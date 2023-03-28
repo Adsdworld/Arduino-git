@@ -1,22 +1,20 @@
 /*Commentaire
-Faire clignoter 3 leds à intervals régulier*/
-
-
-//déclaration des define
-
-
-//déclaration des librairies
+Description : Permet de faire clignoter 3 leds à intervals réguliers
+Etat : Fonctionnel
+Schéma : Disponible
+*/
 
 
 //déclaration des variables
-int time_to_wait=1000;        //temps d'attente entre chaque allumage/extinction en ms
+int time_to_wait=1000;                 //temps d'attente entre chaque allumage/extinction en ms
+
 
 //déclaration des fonctions
 
 void setup() {
-  pinMode(8, OUTPUT);         //sortie numérique
-  pinMode(7, OUTPUT);         //sortie numérique
-  pinMode(6, OUTPUT);         //sortie numérique
+  pinMode(8, OUTPUT);                  //sortie numérique
+  pinMode(7, OUTPUT);                  //sortie numérique
+  pinMode(6, OUTPUT);                  //sortie numérique
   }
 
 

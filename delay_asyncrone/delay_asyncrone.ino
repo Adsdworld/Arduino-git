@@ -1,18 +1,13 @@
 /*Commentaire:
+Description : Permet d'attendre time_to_wait tout en faisant une action pendant que l'on attends
+Etat : Fonctionnel
+Schéma : Indisponible
 */
 
 
-//déclaration des define
-
-
-//déclaration des librairies
-
-
 //déclaration des variables
-float time_to_wait=1000;                  //1000 correspond aux temsp de cuisson de mes pates 
+float time_to_wait=1000;                                          //1000ms correspond au temps pendant lequel je veux attendre
 float time=0;
-
-//déclaration des fonctions
 
 
 void setup() 
@@ -24,10 +19,15 @@ void setup()
 
 void loop() 
 {
-  time=int(millis());                   //je regarde ma montre pour savoir quand j'ai mis mes pates dans la casserole
+  time=int(millis());                                             //Permet de récupérer dans time l'heure "actuelle", millis() commence à 0 quand l'arduino démarre, il prends 1s toutes les 1s, durée max de millis() 50d avant de revenir à 0
   while ((time+time_to_wait)>millis()){
-    Serial.print("mes pates ne sont pas cuites donc je regarde netflix et en même temps mon arduino fais de la couture\n");
+    Serial.print("Hacking FBI.\n");
+    delay(20);
+    Serial.print("Hacking FBI..\n");
+    delay(20);
+    Serial.print("Hacking FBI...\n");
+    delay(20);
   }
-  Serial.print("Mes pates sont cuites :)\n");
+  Serial.print((String)"Il s'est écoulé "+time_to_wait+" ms\n");
 
 }
