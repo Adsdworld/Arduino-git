@@ -8,7 +8,7 @@ Attention à bien respecté le schéma de branchement du bouton, certaines branc
 
 
 //déclaration des variables
-int gpio_input=9;                             //on se sert de la 9 pour savoir si le courant passe où non
+int gpio_input=10;                             //on se sert de la 9 pour savoir si le courant passe où non
 
 
 void setup() {
@@ -28,12 +28,12 @@ void loop() {
 
 
   if (digitalRead(gpio_input)==1){            //j'ai rajouté ça pour que l'on update la console que quand la valeur change
-    Serial.print("le courant passe");
+    Serial.print("le courant ne passe pas");
     while (digitalRead(gpio_input)==1){
       delay(10);
     }
   }else{
-    Serial.print("le courant ne passe pas");
+    Serial.print("le courant passe");
     while (digitalRead(gpio_input)==0){
       delay(10);
     }
