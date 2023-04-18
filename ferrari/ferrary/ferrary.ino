@@ -19,14 +19,15 @@ int Current_F=0;
 
 int Forward_and_Back_Power=255;  //définitions des puissances pour les mouvements
 int Right_and_Left_Power=150;
-int Other_directions=20;
+int Other_directions=100;
+int Turning_Forward_and_Back_Power=Other_directions/3;
 
-int EnableA=13;
-int AC=10;             //définition de la pin du moteur droit
-int AD=9;             //définition de la pin du moteur gauche
+int EnableA=4;//13
+int AC=5;             //définition de la pin du moteur droit
+int AD=6;             //définition de la pin du moteur gauche
 int EnableB=12;
-int BC=6;             //définition de la pin du moteur droit
-int BD=5;             //définition de la pin du moteur gauche
+int BC=9;             //définition de la pin du moteur droit
+int BD=10;             //définition de la pin du moteur gauche
 
 
 //définition des fonctions
@@ -42,7 +43,7 @@ void f_vitesse(char A, char B, int C, int D, int E, int F){              //cette
     if (E>Current_E){analogWrite(BC, ++Current_E);}
     if (F<Current_F){analogWrite(BD, --Current_F);}
     if (F>Current_F){analogWrite(BD, ++Current_F);}
-    delay(5);
+    delay(1);
   }
 }
 
@@ -69,26 +70,22 @@ void loop() {
       f_vitesse(HIGH, HIGH, Forward_and_Back_Power, 0, Forward_and_Back_Power, 0);
     }else{
       if(t == 'L'){
-        f_vitesse(LOW, HIGH, 0, 0, 0, Right_and_Left_Power);
+        f_vitesse(HIGH, LOW, 0, Right_and_Left_Power, 0, 0);
       }else{  
         if(t == 'R'){
-          f_vitesse(HIGH, LOW, 0, Right_and_Left_Power, 0, 0);
+          f_vitesse(LOW, HIGH, 0, 0, 0, Right_and_Left_Power);
         }else{ 
           if(t ==  'H'){
-            //analogWrite(Left_Motor,100);
-            f_vitesse(HIGH, LOW, Other_directions, 0, 0, 0);
+            f_vitesse(HIGH, HIGH, Other_directions, 0, Turning_Forward_and_Back_Power, 0);
           }else{ 
             if(t == 'J'){
-              //analogWrite(Right_Motor,100);   //-
-              f_vitesse(LOW, HIGH, 0, 0, Other_directions, 0);
+              f_vitesse(HIGH, HIGH, Turning_Forward_and_Back_Power, 0, Other_directions, 0);
             }else{
               if(t ==  'I'){
-                //analogWrite(Left_Motor,100);
-                f_vitesse(HIGH, LOW, 0, Other_directions, 0, 0);
+                f_vitesse(HIGH, HIGH, 0, Turning_Forward_and_Back_Power, 0, Other_directions);
               }else{ 
                 if(t == 'G'){
-                  //analogWrite(Right_Motor,100);
-                  f_vitesse(LOW, HIGH, 0, 0, 0, Other_directions);
+                  f_vitesse(HIGH, HIGH, 0, Other_directions, 0, Turning_Forward_and_Back_Power);
                 }else{
                 f_vitesse(LOW, LOW, 0, 0, 0, 0);
                 }}}}}}}}
