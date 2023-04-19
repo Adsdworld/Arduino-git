@@ -1,3 +1,5 @@
+//documentation : https://lastminuteengineers.com/i2c-lcd-arduino-tutorial/
+
 #include <LiquidCrystal_I2C.h>
 
 LiquidCrystal_I2C lcd(0x27,16,2);  // set the LCD address to 0x3F for a 16 chars and 2 line display
@@ -14,5 +16,5 @@ void loop() {
   lcd.print("YOU");
   lcd.setCursor(4,1);   
   lcd.print("MADE IT");
-  lcd.display();
+  lcd.display();  //fait défiler le texte sur l'écran
 }
