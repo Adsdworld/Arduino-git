@@ -52,3 +52,5 @@ Placement analogique :
     
     X=A0/A1/A2/A3/A4/A5
     1024 valeurs de 0 à 1023
+
+
